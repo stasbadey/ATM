@@ -2,6 +2,7 @@ from decimal import Decimal
 from typing import List, Union
 
 from dateutil import parser
+
 from model.entity.card import Card
 
 
@@ -10,54 +11,26 @@ class ChoiceFuncs:
         pass
 
     @staticmethod
-    def first_choice() -> Card:
-        print("Pass a card number, expiration date(YY-MM) and pin")
-        card_number = input()
-        expiration_date = parser.parse(input()).strftime('%m-%y')
-        pin = input()
+    def first_choice(card_number, expiration_date, pin) -> Card:
 
         return Card(card_number, pin, expiration_date)
 
     @staticmethod
-    def second_choice() -> List[Union[str, Decimal]]:
-        print("Put the card(type card number and pin)")
-        card_number = input()
-        pin = input()
-
-        print("Put the cash")
-        amount = Decimal(input())
+    def second_choice(card_number, pin, amount) -> List[Union[str, Decimal]]:
 
         return [card_number, pin, amount]
 
     @staticmethod
-    def third_choice() -> List[str]:
-        print("Put the card(type card number and pin)")
-        card_number = input()
-        pin = input()
+    def third_choice(card_number, pin) -> List[str]:
 
         return [card_number, pin]
 
     @staticmethod
-    def fourth_choice() -> List[Union[str, Decimal]]:
-        print("Put the card(type card number and pin)")
-        card_number = input()
-        pin = input()
-
-        print("Type amount of cash to transfer")
-        amount_of_cash_to_transfer = Decimal(input())
-
-        print("Type participant card number")
-        participant_card_number = input()
+    def fourth_choice(card_number, pin, amount_of_cash_to_transfer, participant_card_number) -> List[Union[str, Decimal]]:
 
         return [card_number, pin, amount_of_cash_to_transfer, participant_card_number]
 
     @staticmethod
-    def fifth_choice() -> List[Union[str, Decimal]]:
-        print("Put the card(type card number and pin)")
-        card_number = input()
-        pin = input()
-
-        print("Type amount of cash to withdraw")
-        amount_of_cash_to_withdraw = Decimal(input())
+    def fifth_choice(card_number, pin, amount_of_cash_to_withdraw) -> List[Union[str, Decimal]]:
 
         return [card_number, pin, amount_of_cash_to_withdraw]

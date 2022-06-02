@@ -20,7 +20,7 @@ class CardDaoImpl(CardDao):
                                                    "user='postgres' "
                                                    "host='localhost' "
                                                    "port='5432' "
-                                                   "password='postgres'")
+                                                   "password='02170004'")
         except(Exception, ConnectionError) as error:
             logging.error('Exception occurred: {}'.format(error))
 
